@@ -3,19 +3,19 @@
 Quick idea for managing vape shop storage. 
 Table consist of few paramaters: 
 
-1.flavour 
+1. flavour 
 
-2.retail_price
+2. retail_price
 
-3.base_price
+3. base_price
 
-4.quantity
+4. quantity
 
-5.volume_ml
+5. volume_ml
 
-6.status
+6. status
 
-7.buying_method
+7. buying_method
 
 
 There is 4 services. 
