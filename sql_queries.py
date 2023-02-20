@@ -85,14 +85,16 @@ def statistics():
     c = input("Type in for which buying method you want to get statistics:")
     cursor.execute("""
     Select
-        SUM(CASE WHEN buying_method =%s and status = 0 or status=1 then quantity else 0 end) as total_amount_bought,
+        SUM(CASE WHEN buying_method =%s and status in (0,1) then quantity else 0 end) as total_amount_bought,
         SUM(CASE WHEN buying_method =%s and status = 0 then quantity else 0 end) as total_amount_present,
         SUM(CASE WHEN buying_method = %s and status = 0 then volume_ml else 0 end) as total_amount_present_ml, 
-        MAX(case when flavour = %s and status = 1 then created else 0 end) as last_purchase_date,
+        MAX(case when flavour = %s and status = 1 then created else null end) as last_purchase_date,
         AVG(CASE when flavour = %s and status =1 then retail_price else 0 end) as average_selling_value
-    from liquid
+    from liquid;
     """,(c,c,c,c,c))
     row = cursor.fetchone()
     print("Statistic for the",c,"flavoured liquid \n Total amount bought:",row[0],"\n Total amount present:",row[1],"\n Total amount present in ml:",row[2], "\n Last purchase data:",row[3],"\n Average selling price",row[4])
     cursor.execute(c)
     conn.commit()
+
+
