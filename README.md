@@ -2,13 +2,21 @@
 
 Quick idea for managing vape shop storage. 
 Table consist of few paramaters: 
+
 1.flavour 
+
 2.retail_price
+
 3.base_price
+
 4.quantity
+
 5.volume_ml
+
 6.status
+
 7.buying_method
+
 
 There is 4 services. 
 
@@ -19,6 +27,8 @@ Fills in every column based on choices given.
 Writes 1 row every second. 
 <img src="https://user-images.githubusercontent.com/80852667/220141787-341d7d26-7d96-451c-822b-4afc810674e8.png" width="500" height="150">
 <img src="https://user-images.githubusercontent.com/80852667/220142290-e130bd75-27c6-4348-b0a6-45d6bdafb3e6.png" width="500" height="150">
+
+
 ***Service 2***
 
 Checks for amount of specified liquid in storage based on status. 
